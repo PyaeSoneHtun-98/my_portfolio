@@ -13,7 +13,7 @@ const experienceData1 = {
 
 const Experience = () => {
   return (
-    <div className='px-4 md:px-12 xl:px-64 pt-12 pb-20'>
+    <div className='px-4 md:px-12 xl:px-64 py-12'>
         <TitleWithLine title="Experience" />
         <div className='flex flex-col gap-3'>
         <ExperienceCard {...experienceData1} />

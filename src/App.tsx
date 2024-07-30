@@ -11,64 +11,67 @@ function App() {
   const experienceRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
-  const sectionRefs = {
-    about: aboutRef,
-    projects: projectsRef,
-    experience: experienceRef,
-    contact: contactRef,
+  const [activeSection, setActiveSection] = useState<string>("about");
+
+  const scrollToSection = (section: string) => {
+    if (section === "about" && aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (section === "projects" && projectsRef.current) {
+      projectsRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (section === "experience" && experienceRef.current) {
+      experienceRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (section === "contact" && contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
-  const [activeSection, setActiveSection] = useState("about");
-
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.6, // Adjust the threshold for when the section is considered to be in view
-    };
+    const sections = [
+      { section: "about", ref: aboutRef },
+      { section: "projects", ref: projectsRef },
+      { section: "experience", ref: experienceRef },
+      { section: "contact", ref: contactRef },
+    ];
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    }, options);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3 } // Adjusted threshold value to 0.3
+    );
 
-    Object.values(sectionRefs).forEach((ref) => {
+    sections.forEach(({ ref, section }) => {
       if (ref.current) {
+        ref.current.id = section; // Add id to the element
         observer.observe(ref.current);
       }
     });
 
     return () => {
-      Object.values(sectionRefs).forEach((ref) => {
+      sections.forEach(({ ref }) => {
         if (ref.current) {
           observer.unobserve(ref.current);
         }
       });
     };
-  }, [sectionRefs]);
-
-  const scrollToSection = (section: string) => {
-    const ref = sectionRefs[section as keyof typeof sectionRefs];
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  }, []);
 
   return (
     <div className="flex flex-col h-screen">
-      <div ref={aboutRef} id="about">
+      <div ref={aboutRef}>
         <About />
       </div>
-      <div ref={experienceRef} id="experience">
+      <div ref={experienceRef}>
         <Experience />
       </div>
-      <div ref={projectsRef} id="projects">
+      <div ref={projectsRef}>
         <Projects />
       </div>
-      <div ref={contactRef} id="contact">
+      <div ref={contactRef}>
         <Contact />
       </div>
       <Navigation scrollToSection={scrollToSection} activeSection={activeSection} />
