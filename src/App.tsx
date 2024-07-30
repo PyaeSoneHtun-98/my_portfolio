@@ -15,13 +15,13 @@ function App() {
 
   const scrollToSection = (section: string) => {
     if (section === "about" && aboutRef.current) {
-      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+      aboutRef.current.scrollIntoView({ behavior: "auto" });
     } else if (section === "projects" && projectsRef.current) {
-      projectsRef.current.scrollIntoView({ behavior: "smooth" });
+      projectsRef.current.scrollIntoView({ behavior: "auto" });
     } else if (section === "experience" && experienceRef.current) {
-      experienceRef.current.scrollIntoView({ behavior: "smooth" });
+      experienceRef.current.scrollIntoView({ behavior: "auto" });
     } else if (section === "contact" && contactRef.current) {
-      contactRef.current.scrollIntoView({ behavior: "smooth" });
+      contactRef.current.scrollIntoView({ behavior: "auto" });
     }
   };
 
@@ -41,7 +41,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.3 } // Adjusted threshold value to 0.3
+      { threshold: 0.5 } // Adjust threshold as needed
     );
 
     sections.forEach(({ ref, section }) => {
