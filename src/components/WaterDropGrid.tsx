@@ -17,7 +17,7 @@ const WaterDropGrid: React.FC = () => {
           pretty cool companies. I also teach people to paint online (incase
           you've got an empty canvas layin' around 🎨). Let's connect!
         </p>
-        <div className="pointer-events-auto pt-3">        <Example />
+        <div className="pointer-events-auto pt-6">        <Example />
         </div>
       </div>
       <div className="w-full h-full overflow-hidden grid place-content-end lg:place-content-center lg:-ml-32 z-10">
