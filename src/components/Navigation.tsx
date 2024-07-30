@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { AiOutlineProject , AiOutlineUser , AiOutlineMail } from "react-icons/ai";
+import { AiOutlineProject, AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
 
 interface MenuItem {
@@ -11,23 +10,22 @@ interface MenuItem {
 
 interface NavigationProps {
   scrollToSection: (section: string) => void;
+  activeSection: string;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ scrollToSection }) => {
+const Navigation: React.FC<NavigationProps> = ({ scrollToSection, activeSection }) => {
   const Menus: MenuItem[] = [
     { name: "About", icon: <AiOutlineUser />, dis: "md:translate-x-[8px] -translate-x-[120px]", section: "about" },
     { name: "Experience", icon: <MdOutlineWorkspacePremium />, dis: "md:translate-x-[88px] -translate-x-[40px]", section: "experience" },
     { name: "Project", icon: <AiOutlineProject />, dis: "md:translate-x-[168px] translate-x-[40px]", section: "projects" },
     { name: "Contact", icon: <AiOutlineMail />, dis: "md:translate-x-[248px] translate-x-[120px]", section: "contact" },
   ];
-  
-  const [active, setActive] = useState(0);
-  
+
   return (
     <div className="flex justify-center w-full fixed bottom-0 md:bottom-4 md:px-3 z-20">
       <ul className="flex relative w-full md:w-auto justify-center md:justify-normal bg-[#09090B] md:rounded-3xl px-6">
         <span
-          className={`bg-[#6366F1] duration-500 ${Menus[active].dis} border-4 border-[#18181B] h-16 w-16 absolute
+          className={`bg-[#6366F1] duration-500 ${Menus.find(menu => menu.section === activeSection)?.dis} border-4 border-[#18181B] h-16 w-16 absolute
          -top-5 rounded-full`}
         >
           <span
@@ -44,20 +42,19 @@ const Navigation: React.FC<NavigationProps> = ({ scrollToSection }) => {
             <a
               className="flex flex-col pt-6"
               onClick={() => {
-                setActive(i);
                 scrollToSection(menu.section);
               }}
             >
               <span
                 className={`text-xl flex justify-center text-white cursor-pointer duration-500 z-10 ${
-                  i === active && "-mt-6 "
+                  menu.section === activeSection && "-mt-6 "
                 }`}
               >
                 {menu.icon}
               </span>
               <span
                 className={` ${
-                  active === i
+                  activeSection === menu.section
                     ? "translate-y-4 duration-700 opacity-100 text-white text-[10px] md:text-xs pt-3 text-center "
                     : "opacity-0 translate-y-10"
                 } `}
