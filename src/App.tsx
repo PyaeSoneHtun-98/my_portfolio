@@ -41,7 +41,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.5 } // Adjust threshold as needed
+      { threshold: 0.3 } // Adjusted threshold value to 0.3
     );
 
     sections.forEach(({ ref, section }) => {
