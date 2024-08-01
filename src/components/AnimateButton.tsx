@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const Example: React.FC = () => {
   return (
-    <a href={MyResume} download className="grid place-content-center">
+    <a href={MyResume} className="grid place-content-center">
       <EncryptButton />
     </a>
   );
