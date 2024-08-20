@@ -12,6 +12,8 @@ import PhpIcon from "../assets/php.svg";
 import MantineIcon from "../assets/mantine.svg";
 import { Tooltip } from "react-tooltip";
 import { useLanguageContext } from "../globals/Context";
+import { MdOutlineHomeWork } from "react-icons/md";
+import { BsFillEmojiSmileFill } from "react-icons/bs";
 
 const About = () => {
   const { langData } = useLanguageContext();
@@ -38,7 +40,7 @@ const About = () => {
           think you've got an opening that I might like, let's connect
         </div>
         <div className="md:px-4">
-          <div className="dark:text-white pb-3 text-lg font-bold">{langData.use_at_work}</div>
+          <div className="dark:text-white flex items-center gap-2 pb-3 text-lg font-bold"><MdOutlineHomeWork className="text-indigo-500" size={24}/>{langData.use_at_work}</div>
           <div className="flex flex-wrap gap-4 pb-3">
             <img
               src={ReactIcon}
@@ -89,7 +91,7 @@ const About = () => {
               data-tooltip-content="GrphQl"
             />
           </div>
-          <div className="dark:text-white py-3 text-lg font-bold">{langData.use_for_fun}</div>
+          <div className="dark:text-white py-3 flex items-center gap-2 text-lg font-bold"><BsFillEmojiSmileFill className="text-indigo-500" size={22}/>{langData.use_for_fun}</div>
           <div className="flex flex-wrap gap-4">
             <img
               src={PhpIcon}

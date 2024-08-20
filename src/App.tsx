@@ -50,12 +50,12 @@ function App() {
           }
         });
       },
-      { threshold: 0.3 } // Adjusted threshold value to 0.3
+      { threshold: 0.3 }
     );
 
     sections.forEach(({ ref, section }) => {
       if (ref.current) {
-        ref.current.id = section; // Add id to the element
+        ref.current.id = section;
         observer.observe(ref.current);
       }
     });
@@ -68,11 +68,10 @@ function App() {
       });
     };
   }, []);
-  
 
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => {
-      localStorage.setItem("darkMode", JSON.stringify(!prevMode)); // Save dark mode preference
+      localStorage.setItem("darkMode", JSON.stringify(!prevMode));
       return !prevMode;
     });
   };
@@ -81,12 +80,12 @@ function App() {
 
   return (
     <div className={`flex flex-col min-h-screen ${darkMode ? 'dark' : ''} ${darkMode ? 'bg-[#18181B]' : 'bg-[#F0F2F5]'}`}>
-      <div className="flex gap-3 absolute top-3 w-full justify-end pr-4">
-        <button className="active:scale-90 ease-in-out duration-300 dark:bg-gray-400 dark:text-white text-sm p-4 select-none rounded-full" onClick={() => toggleLanguage(language === 'EN' ? 'MM' : 'EN')}>
+      <div className="flex gap-3 absolute items-center top-3 w-full justify-end pr-4">
+        <button className="active:scale-90 ease-in-out duration-300 dark:bg-gray-400 dark:text-white text-xs md:text-sm p-2 md:p-4 select-none rounded-full" onClick={() => toggleLanguage(language === 'EN' ? 'MM' : 'EN')}>
           {language === 'EN' ? 'မြန်မာ' : 'English'}
         </button>
-        <button className="active:scale-90 ease-in-out duration-300 dark:bg-yellow-500 bg-gray-400 p-3 lg:p-5 rounded-full" onClick={toggleDarkMode}>
-          {darkMode ? <GoSun className="w-8 lg:w-auto" /> : <FaMoon className="w-8 lg:w-auto" />}
+        <button className="active:scale-90 ease-in-out duration-300 flex items-center justify-center h-8 w-8 md:w-auto md:h-auto dark:bg-[#E3C851] bg-gray-400 md:p-5 rounded-full" onClick={toggleDarkMode}>
+          {darkMode ? <GoSun className="w-3 lg:w-auto" /> : <FaMoon className="w-3 lg:w-auto" />}
         </button>
       </div>
       <div ref={aboutRef}>

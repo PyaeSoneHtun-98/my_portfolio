@@ -9,7 +9,7 @@ const WaterDropGrid: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center relative">
       <div className="text-left dark:text-white z-20 mb-12 lg:mb-0 flex flex-col justify-center items-center lg:items-start lg:relative absolute inset-0 px-4 md:px-0 pointer-events-none">
-        <h1 className="text-4xl md:text-7xl font-bold">
+        <h1 className="text-4xl md:text-7xl font-bold mb-4">
           Hi, I'm {langData.short_name}<span className="text-indigo-500">.</span>
         </h1>
         <h2 className="text-2xl md:text-4xl pt-2 text-[#53C1DE]">

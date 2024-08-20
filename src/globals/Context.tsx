@@ -24,7 +24,7 @@ export const useLanguageContext = (): ContextProps => {
 
 export const ContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [language, setLanguage] = useState<Language>(
-        (localStorage.getItem("elibLang") as Language) || "MM"
+        (localStorage.getItem("portfolioLang") as Language) || "EN"
     );
     const [langData, setLangData] = useState(
         language === "EN" ? langDataEN : langDataMM
@@ -35,13 +35,13 @@ export const ContextProvider: React.FC<{ children: React.ReactNode }> = ({ child
     const toggleLanguage = (changeTo: Language) => {
         if (changeTo === "MM") {
             setLanguage("MM");
-            localStorage.setItem("elibLang", "MM");
+            localStorage.setItem("portfolioLang", "MM");
             setLangData(langDataMM);
             setAlerts(alertsMM);
             setDLabels(dLabelsMM);
         } else {
             setLanguage("EN");
-            localStorage.setItem("elibLang", "EN");
+            localStorage.setItem("portfolioLang", "EN");
             setLangData(langDataEN);
             setAlerts(alertsEN);
             setDLabels(dLabelsEN);
