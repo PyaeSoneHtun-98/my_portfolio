@@ -80,9 +80,6 @@ function App() {
   return (
     <div className={`flex flex-col min-h-screen ${darkMode ? 'dark' : ''} ${darkMode ? 'bg-[#18181B]' : 'bg-[#F0F2F5]'}`}>
       <div className="flex gap-3 absolute items-center top-3 w-full justify-end pr-4">
-        {/* <button className="active:scale-90 ease-in-out duration-300 dark:bg-gray-400 dark:text-white text-xs md:text-sm p-2 md:p-4 select-none rounded-full" onClick={() => toggleLanguage(language === 'EN' ? 'MM' : 'EN')}>
-          {language === 'EN' ? 'မြန်မာ' : 'English'}
-        </button> */}
         <LanguageSwitcher />
         <button className="active:scale-90 ease-in-out duration-300 flex items-center justify-center h-8 w-8 md:w-auto md:h-auto dark:bg-zinc-800 bg-indigo-400 md:p-4 rounded-full" onClick={toggleDarkMode}>
           {darkMode ? <IoSunny className="w-3 lg:w-auto text-[#E3C851]" /> : <FaMoon className="w-3 lg:w-auto text-white" />}
