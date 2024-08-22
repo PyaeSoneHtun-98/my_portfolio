@@ -34,7 +34,7 @@ const LanguageSwitcher: React.FC = () => {
       </button>
 
       {showDropdown && (
-        <div className="absolute right-0 mt-2 w-28 bg-white dark:bg-zinc-800 dark:text-white rounded-lg shadow-lg">
+        <div className="absolute right-0 mt-2 w-28 z-30 bg-white dark:bg-zinc-800 dark:text-white rounded-lg shadow-lg">
           <div
             className="px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 cursor-pointer"
             onClick={() => handleLanguageChange('EN')}

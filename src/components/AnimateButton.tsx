@@ -2,18 +2,26 @@ import React, { useRef, useState, useEffect } from "react";
 import { FiLock } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { useLanguageContext } from '../globals/Context';
+import MyResume from '../assets/CV for Web-Developer Internship (Pyae Sone Htun).pdf';
+
+const Example: React.FC = () => {
+  return (
+    <a href={MyResume} className="grid place-content-center">
+      <EncryptButton />
+    </a>
+  );
+};
 
 const CHARS = "!@#$%^&*():{};|,.<>/?";
 const CYCLES_PER_LETTER = 2;
 const SHUFFLE_TIME = 50;
 
 const EncryptButton: React.FC = () => {
-  const { langData } = useLanguageContext(); // Get the latest langData
+  const { langData } = useLanguageContext();
   const intervalRef = useRef<number | null>(null);
-  const [text, setText] = useState(langData.resume); // Initialize with current resume text
+  const [text, setText] = useState(langData.resume);
 
   useEffect(() => {
-    // Update text whenever langData.resume changes
     setText(langData.resume);
   }, [langData.resume]);
 
@@ -49,7 +57,6 @@ const EncryptButton: React.FC = () => {
       intervalRef.current = null;
     }
 
-    // Ensure it stops and resets to the correct text
     setText(langData.resume);
   };
 
@@ -88,4 +95,4 @@ const EncryptButton: React.FC = () => {
   );
 };
 
-export default EncryptButton;
+export default Example;
