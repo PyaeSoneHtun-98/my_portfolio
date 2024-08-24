@@ -2,19 +2,29 @@ import React, { MouseEvent } from "react";
 import anime from "animejs";
 import Example from "./AnimateButton";
 import { useLanguageContext } from "../globals/Context";
+import Typewriter from 'typewriter-effect';
+
 
 const WaterDropGrid: React.FC = () => {
   const { langData } = useLanguageContext();
 
   return (
     <div className="flex flex-col lg:flex-row items-center relative">
-      <div className="text-left dark:text-white z-20 mb-12 lg:mb-0 flex flex-col justify-center items-center lg:items-start lg:relative absolute inset-0 px-4 md:px-0 pointer-events-none">
+      <div className="text-left text-black dark:text-white z-20 mb-12 lg:mb-0 flex flex-col justify-center items-center lg:items-start lg:relative absolute inset-0 px-4 md:px-0 pointer-events-none">
         <h1 className="text-4xl md:text-7xl font-bold mb-4">
           Hi, I'm {langData.short_name}<span className="text-indigo-500">.</span>
         </h1>
         <h2 className="text-2xl md:text-4xl pt-2 text-[#53C1DE]">
-          I'm a Frontend Developer
-        </h2>
+        <Typewriter
+          options={{
+            strings: ["I'm a Frontend Developer"],
+            autoStart: true,
+            loop: true,
+            delay: 75,
+            deleteSpeed: 50,
+          }}
+        />
+      </h2>
         <p className="mt-4">
           I've spent the last 5 years building and scaling software for some
           pretty cool companies. I also teach people to paint online (incase
@@ -65,12 +75,12 @@ const DotGrid: React.FC = () => {
     for (let j = 0; j < GRID_HEIGHT; j++) {
       dots.push(
         <div
-          className="group cursor-crosshair rounded-full p-2 transition-colors hover:dark:bg-slate-600 hover:bg-slate-300"
+          className="group opacity-50 dark:opacity-100 cursor-crosshair rounded-full p-2 transition-colors hover:dark:bg-slate-600 hover:bg-slate-300"
           data-index={index}
           key={`${i}-${j}`}
         >
           <div
-            className="dot-point h-2 w-2 rounded-full bg-gradient-to-b from-slate-700 to-slate-400 opacity-50 group-hover:from-indigo-500 group-hover:to-white"
+            className="dot-point h-2 w-2 rounded-full bg-indigo-500 dark:bg-gradient-to-b from-slate-700 to-slate-400 opacity-50 group-hover:from-indigo-500 group-hover:to-white"
             data-index={index}
           />
         </div>

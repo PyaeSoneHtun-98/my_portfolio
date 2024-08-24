@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  cursor: url('./assets/thunder.svg'), auto;
-} */
+* {
+  cursor: url('./assets/cursor2.svg'), auto;
+}
 
 /* :root {
   background-color: #18181B ;
