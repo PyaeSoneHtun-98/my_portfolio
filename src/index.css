@@ -25,6 +25,7 @@
 }
 ::-webkit-scrollbar-thumb:active {
   cursor: grabbing;
+  background-color: #555555;
 }
 
 ::-webkit-scrollbar-track {
