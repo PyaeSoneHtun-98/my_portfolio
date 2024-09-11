@@ -5,9 +5,37 @@
     <link rel="icon" type="image/png" href="/src/assets/profile.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pyae Sone Htun | Portfolio</title>
+    <style>
+      /* Simple CSS to center the loading spinner */
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .spinner {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Assuming bundle.js contains your main app logic
+      window.onload = function() {
+        document.getElementById('root').classList.remove('loading');
+      };
+    </script>
   </body>
 </html>
