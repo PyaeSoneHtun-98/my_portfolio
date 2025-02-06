@@ -45,7 +45,6 @@ function App() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
       
       // Check if we're at the bottom of the page
       if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 100) {
