@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pyaesonehtun.vercel.app/sitemap.xml
