@@ -6,7 +6,7 @@ const Contact = () => {
   const { langData } = useLanguageContext();
 
   return (
-    <div className="flex justify-center dark:text-white  px-4 md:px-12 xl:px-64 pb-40 w-full">
+    <div id="contact" className="flex justify-center dark:text-white  px-4 md:px-12 xl:px-64 pb-40 w-full">
       <div className="flex flex-col w-full justify-center hover:scale-105 ease-in-out duration-500 shadow-lg bg-white dark:bg-zinc-800 rounded-xl max-w-lg p-8 space-y-3">
         <div className="text-center pb-2 text-3xl md:text-5xl font-bold ">
           {langData.find_me}        </div>

@@ -19,7 +19,7 @@ const About = () => {
   const { langData } = useLanguageContext();
 
   return (
-    <div className="px-4 md:px-12 xl:px-64 pt-20" >
+    <div id="about" className="px-4 md:px-12 xl:px-64 pt-20" >
       <WaterDropGrid />
       <TitleWithLine title={langData.about} />
       <div className="md:flex w-full text-sm md:text-base md:gap-2 space-y-4 md:space-y-0">

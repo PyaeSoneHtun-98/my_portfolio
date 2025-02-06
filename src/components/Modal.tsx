@@ -42,7 +42,7 @@ const SpringModal: React.FC<SpringModalProps> = ({
           >
             <div className="relative z-10">
               <div
-                className="absolute top-2 text-lg right-2 cursor-pointer hover:bg-gray-300 p-3 rounded-full"
+                className="absolute top-0 text-lg right-0 cursor-pointer hover:bg-red-300/75 p-2"
                 onClick={() => setIsOpen(false)}
               >
                 <IoMdClose />
