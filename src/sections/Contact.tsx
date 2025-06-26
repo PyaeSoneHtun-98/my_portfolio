@@ -16,12 +16,12 @@ const Contact = () => {
         </p>
         <div className="flex gap-4 justify-center pt-3">
           <a href="https://www.facebook.com/share/xxBbK5vySHpBpzfS/?mibextid=qi2Omg" target="_blank">
-            <FaFacebookSquare className="text-2xl hover:scale-110 cursor-pointer active:scale-90 hover:text-[#3B5998]" />
+            <FaFacebookSquare className="text-2xl hover:scale-110  active:scale-90 hover:text-[#3B5998]" />
           </a>
-          <FaLinkedin className="text-2xl hover:scale-110 cursor-pointer active:scale-90 hover:text-[#00ADEF]" />
-          <FaWhatsapp className="text-2xl hover:scale-110 cursor-pointer active:scale-90 hover:text-[#67C15E]" />
+          <FaLinkedin className="text-2xl hover:scale-110  active:scale-90 hover:text-[#00ADEF]" />
+          <FaWhatsapp className="text-2xl hover:scale-110  active:scale-90 hover:text-[#67C15E]" />
           <a href="mailto:pyaesonehtun969@gmail.com">
-            <MdOutlineEmail className="text-2xl hover:scale-110 cursor-pointer active:scale-90 hover:text-[#EA4335]" />
+            <MdOutlineEmail className="text-2xl hover:scale-110  active:scale-90 hover:text-[#EA4335]" />
           </a>
         </div>
       </div>

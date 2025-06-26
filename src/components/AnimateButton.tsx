@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { FiLock } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { useLanguageContext } from '../globals/Context';
-import MyResume from '../assets/CV for Web-Developer Internship (Pyae Sone Htun).pdf';
+import MyResume from '../assets/CV for PyaeSoneHtun.pdf';
 
 const Example: React.FC = () => {
   return (

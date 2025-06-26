@@ -75,12 +75,12 @@ const DotGrid: React.FC = () => {
     for (let j = 0; j < GRID_HEIGHT; j++) {
       dots.push(
         <div
-          className="group opacity-50 dark:opacity-100 cursor-crosshair rounded-full p-2 transition-colors hover:dark:bg-slate-600 hover:bg-slate-300"
+          className="group cursor-crosshair rounded-full p-2 transition-colors hover:bg-slate-600"
           data-index={index}
           key={`${i}-${j}`}
         >
           <div
-            className="dot-point h-2 w-2 rounded-full bg-indigo-500 dark:bg-gradient-to-b from-slate-700 to-slate-400 opacity-50 group-hover:from-indigo-500 group-hover:to-white"
+            className="dot-point h-2 w-2 rounded-full bg-gradient-to-b from-slate-700 to-slate-400 opacity-50 group-hover:from-indigo-600 group-hover:to-white"
             data-index={index}
           />
         </div>
