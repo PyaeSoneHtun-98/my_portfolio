@@ -100,7 +100,7 @@ function App() {
       <div className="flex gap-3 absolute items-center top-3 w-full justify-end pr-4">
         <LanguageSwitcher />
         <button
-          className="relative active:scale-90 ease-in-out duration-300 flex items-center shadow-md dark:shadow-white justify-center h-8 w-8 md:w-12 md:h-12 dark:bg-zinc-800 bg-indigo-400 md:p-4 rounded-full"
+          className="relative active:scale-90 ease-in-out duration-300 flex items-center justify-center h-8 w-8 md:w-12 md:h-12 dark:bg-zinc-800 bg-cyan-400 md:p-4 rounded-full"
           onClick={toggleDarkMode}
         >
           <span

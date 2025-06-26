@@ -38,11 +38,19 @@ const SpringModal: React.FC<SpringModalProps> = ({
             animate={{ scale: 1, rotate: "0deg" }}
             exit={{ scale: 0, rotate: "0deg" }}
             onClick={(e) => e.stopPropagation()}
-            className=" text-white bg-[#18181B] rounded-lg w-full max-w-xl shadow-xl cursor-default relative overflow-hidden"
+            className=" text-white rounded-3xl w-full max-w-xl shadow-xl cursor-default relative overflow-hidden"
           >
-            <div className="relative z-10">
+            <div className="relative z-10 p-4 rounded-3xl"
+                    style={{
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                      backdropFilter: 'blur(2px) saturate(180%)',
+                      WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                      boxShadow: '0 8px 16px 0 rgba(0, 0, 0, 0.2)'
+                    }}
+            >
               <div
-                className="absolute top-0 text-lg right-0 cursor-pointer hover:bg-red-300/75 p-2"
+                className="absolute -top-2 text-lg -right-1 cursor-pointer hover:bg-red-500 p-2"
                 onClick={() => setIsOpen(false)}
               >
                 <IoMdClose />
@@ -57,7 +65,7 @@ const SpringModal: React.FC<SpringModalProps> = ({
               </h3>
               <div className="flex space-x-2 mb-4 justify-center">
                 {modalData.languages.map((language, index) => (
-                  <span key={index} className="text-indigo-300">
+                  <span key={index} className="text-cyan-300">
                     {language}
                   </span>
                 ))}
@@ -65,11 +73,11 @@ const SpringModal: React.FC<SpringModalProps> = ({
               <div className="md:p-6 p-4 text-sm md:text-base">{modalData.description}</div>
               <p className="px-4 md:px-6 text-xl font-semibold">{langData.project_link}</p>
               <div
-                className="flex gap-2 pt-3 px-4 md:px-6 w-fit items-center pb-6 cursor-pointer hover:text-indigo-500 group"
+                className="flex gap-2 pt-3 px-4 md:px-6 w-fit items-center pb-6 cursor-pointer hover:text-cyan-500 group"
                 onClick={() => window.open(modalData.demoLink, "_blank")}
               >
-                <CiShare1 className="text-white text-lg group-hover:text-indigo-500" />
-                <span className="text-white group-hover:text-indigo-500 text-sm">
+                <CiShare1 className="text-white text-lg group-hover:text-cyan-500" />
+                <span className="text-white group-hover:text-cyan-500 text-sm">
                   {langData.live_project}
                 </span>
               </div>

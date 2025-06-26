@@ -47,7 +47,7 @@ const DotGrid: React.FC = () => {
             key={`${i}-${j}`}
           >
             <div
-              className="dot-point h-2 w-2 rounded-full bg-indigo-500 dark:bg-gradient-to-b from-slate-700 to-slate-400 opacity-50 group-hover:from-indigo-500 group-hover:to-white"
+              className="dot-point h-2 w-2 rounded-full bg-cyan-500 dark:bg-gradient-to-b from-slate-700 to-slate-400 opacity-50 group-hover:from-cyan-500 group-hover:to-white"
               data-index={index}
             />
           </div>
@@ -76,7 +76,7 @@ const WaterDropGrid: React.FC = () => {
     <div className="flex flex-col lg:flex-row items-center relative">
       <div className="text-left text-black dark:text-white z-20 mb-12 lg:mb-0 flex flex-col justify-center items-center lg:items-start lg:relative absolute inset-0 px-4 md:px-0 pointer-events-none">
         <h1 className="text-4xl md:text-7xl font-bold mb-4">
-          Hi, I'm {langData.short_name}<span className="text-indigo-500">.</span>
+          Hi, I'm {langData.short_name}<span className="text-cyan-500">.</span>
         </h1>
         <h2 className="text-2xl md:text-4xl pt-2 text-[#53C1DE]">
           <Typewriter
@@ -90,9 +90,9 @@ const WaterDropGrid: React.FC = () => {
           />
         </h2>
         <p className="mt-4">
-          I've spent the last 5 years building and scaling software for some
-          pretty cool companies. I also teach people to paint online (incase
-          you've got an empty canvas layin' around 🎨). Let's connect!
+          I build intuitive and responsive user interfaces with tools like React and Next.js. 
+          I'm passionate about turning complex ideas into clean, functional applications.
+          I'm always exploring new technologies and working towards my goal of becoming a full-stack developer. Let's connect!
         </p>
         <div className="pointer-events-auto pt-6">        
           <Example />
