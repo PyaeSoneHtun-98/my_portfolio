@@ -50,13 +50,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ imageSrc, title, languages, d
 
         <div className="flex space-x-2 mt-2">
           {languages.map((language, index) => (
-            <span key={index} className="dark:text-indigo-300 text-indigo-500">{language}</span>
+            <span key={index} className="dark:text-cyan-300 text-cyan-500">{language}</span>
           ))}
         </div>
         <p className="dark:text-gray-400 text-sm md:text-base mt-2">
           {description.length > 100 ? `${description.substring(0, 100)}...` : description}
           {description.length > 100 && (
-            <a className="dark:text-indigo-300 text-indigo-500 cursor-pointer" onClick={handleLearnMoreClick}>
+            <a className="dark:text-cyan-300 text-cyan-500 cursor-pointer" onClick={handleLearnMoreClick}>
               {langData.learn_more} &gt;
             </a>
           )}

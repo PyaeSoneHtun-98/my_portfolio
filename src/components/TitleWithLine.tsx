@@ -10,7 +10,7 @@ const TitleWithLine: React.FC<TitleWithLineProps> = ({ title }) => {
     <div className="flex justify-center items-center dark:text-white py-8">
       <h2 className="text-3xl md:text-5xl font-bold">
         {title}
-        <span className="text-indigo-500">.</span>
+        <span className="text-cyan-500">.</span>
       </h2>
       <motion.div
         initial="hidden"

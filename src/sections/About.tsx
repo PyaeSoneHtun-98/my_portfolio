@@ -1,6 +1,7 @@
 import WaterDropGrid from "../components/WaterDropGrid";
 import TitleWithLine from "../components/TitleWithLine";
 import ReactIcon from "../assets/react.svg";
+import GitIcon from "../assets/git.svg";
 import TailwindIcon from "../assets/tailwind.svg";
 import TSIcon from "../assets/typescript.svg";
 import HTMLIcon from "../assets/html.svg";
@@ -19,34 +20,30 @@ const About = () => {
   const { langData } = useLanguageContext();
 
   return (
-    <div className="px-4 md:px-12 xl:px-64 pt-20" >
+    <div id="about" className="px-4 md:px-12 xl:px-64 pt-20" >
       <WaterDropGrid />
       <TitleWithLine title={langData.about} />
       <div className="md:flex w-full text-sm md:text-base md:gap-2 space-y-4 md:space-y-0">
         <div className="dark:text-white md:w-2/3 text-justify md:leading-relaxed">
-          <span className="bg-indigo-500 text-white py-2 px-3 rounded font-bold mr-1 float-left text-2xl">
+          <span className="bg-cyan-500 text-white py-2 px-3 rounded font-bold mr-1 float-left text-2xl">
             H
           </span>
-          ey! I'm <span className="text-lg font-bold text-indigo-500">{langData.name}</span>, if you haven't already gathered that by now. I'm a
-          painter turned software engineer from Daytona, Florida. I specialize
-          in the backend, primarily Node and Rust, but love building with
-          whatever tools are right for the job. I currently work for Google on
-          Google Photos. I also toss in my $2 with the design systems teams from
-          time to time (once an artist, always an artist, amirite?). Outside of
-          work, I still love to paint. Any given Sunday you'll find me
-          scribbling some happy clouds with my son I even teach courses online
-          if you're looking to learn! I'm passively looking for new positions
-          where I can merge my love for code with my love for the canvas. If you
-          think you've got an opening that I might like, let's connect
+          ey! I'm <span className="text-lg font-bold text-cyan-500">{langData.name}</span>, I am a Frontend Developer who thrives on seeing a project come together, from the initial concept to a fully functioning application. My expertise is in the modern JavaScript ecosystem, where I use tools like React, Next.js, and TypeScript to build high-quality user experiences. My curiosity drives me to constantly learn, and in my spare time, I enjoy experimenting with new technologies to stay on the cutting edge. My goal is to grow into a full-stack role and to begin integrating machine learning concepts into my work.
         </div>
         <div className="md:px-4">
-          <div className="dark:text-white flex items-center gap-2 pb-3 text-lg font-bold"><MdOutlineHomeWork className="text-indigo-500" size={24}/>{langData.use_at_work}</div>
+          <div className="dark:text-white flex items-center gap-2 pb-3 text-lg font-bold"><MdOutlineHomeWork className="text-cyan-500" size={24} />{langData.use_at_work}</div>
           <div className="flex flex-wrap gap-4 pb-3">
             <img
               src={ReactIcon}
               className="w-8 h-8"
               data-tooltip-id="react"
               data-tooltip-content="React"
+            />
+            <img
+              src={GitIcon}
+              className="w-8 h-8"
+              data-tooltip-id="git"
+              data-tooltip-content="Git"
             />
             <img
               src={TailwindIcon}
@@ -91,7 +88,7 @@ const About = () => {
               data-tooltip-content="GrphQl"
             />
           </div>
-          <div className="dark:text-white py-3 flex items-center gap-2 text-lg font-bold"><BsFillEmojiSmileFill className="text-indigo-500" size={22}/>{langData.use_for_fun}</div>
+          <div className="dark:text-white py-3 flex items-center gap-2 text-lg font-bold"><BsFillEmojiSmileFill className="text-cyan-500" size={22} />{langData.use_for_fun}</div>
           <div className="flex flex-wrap gap-4">
             <img
               src={PhpIcon}
@@ -139,15 +136,16 @@ const About = () => {
         </div>
       </div>
       <Tooltip id="react" />
-          <Tooltip id="tailwind" />
-          <Tooltip id="typescript" />
-          <Tooltip id="html" />
-          <Tooltip id="css" />
-          <Tooltip id="javascript" />
-          <Tooltip id="framer" />
-          <Tooltip id="gql" />
-          <Tooltip id="php" />
-          <Tooltip id="mantine" />
+      <Tooltip id="git" />
+      <Tooltip id="tailwind" />
+      <Tooltip id="typescript" />
+      <Tooltip id="html" />
+      <Tooltip id="css" />
+      <Tooltip id="javascript" />
+      <Tooltip id="framer" />
+      <Tooltip id="gql" />
+      <Tooltip id="php" />
+      <Tooltip id="mantine" />
     </div>
   );
 };
